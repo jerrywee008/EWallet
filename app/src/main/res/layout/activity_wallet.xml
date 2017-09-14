@@ -1,0 +1,193 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/newSettingLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="rds.com.mywallet.WalletActivity">
+
+    <TextView
+        android:id="@+id/total_amt_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Amount"
+        android:paddingLeft="15dp"
+        android:paddingTop="0dp"
+        android:textColor="#a5d4e2"
+        android:textSize="25sp"
+        android:textStyle="normal"/>
+
+    <EditText
+        android:id="@+id/total_amt_txt"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:drawable/editbox_background"
+        android:layout_below="@+id/total_amt_label"/>
+
+    <LinearLayout android:id="@+id/cost_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/total_amt_txt">
+
+        <TextView
+            android:id="@+id/date_lbl1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".20"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/total_amt_txt"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:textColor="#a5d4e2"
+            android:text="Date"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/item_lbl1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/total_amt_txt"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/date_lbl1"
+            android:layout_weight=".40"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:text="Charge Desc"
+            android:textColor="#a5d4e2"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/cost_lbl1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".20"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/total_amt_txt"
+            android:layout_toRightOf="@+id/item_lbl1"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:textColor="#a5d4e2"
+            android:text="Cost"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/empty_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".20"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/total_amt_txt"
+            android:layout_toRightOf="@+id/item_lbl1"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"
+            android:textColor="#a5d4e2"
+            android:text=""
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/charge_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cost_title">
+
+        <EditText
+            android:id="@+id/shopping_date_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".20"
+            android:layout_marginTop="4dp"
+            android:inputType="date"
+            android:ems="2"/>
+
+        <EditText
+            android:id="@+id/item_name_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".40"
+            android:layout_marginTop="4dp"
+            android:inputType="textMultiLine"
+            android:layout_toRightOf="@+id/shopping_date_txt"
+            android:ems="4"/>
+
+        <EditText
+            android:id="@+id/cost_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".20"
+            android:layout_marginTop="4dp"
+            android:inputType="numberDecimal"
+            android:layout_toRightOf="@+id/item_name_txt"
+            android:ems="2"/>
+
+        <Button
+            android:id="@+id/add_line_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/cost_txt"
+            android:src="@drawable/add_icon"
+            android:text="New Line" />
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/listLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/charge_add"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp">
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/remainLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listLayout"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/remain_amt_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remainning Amount: "
+            android:layout_marginTop="30dp"
+            android:textColor="#a5d4e2"
+            android:textSize="20sp"
+            android:textStyle="normal"/>
+
+        <TextView
+            android:id="@+id/remain_amt_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@+id/remain_amt_label"
+            android:textSize="20sp"
+            android:background="@android:drawable/editbox_background"/>
+    </LinearLayout>
+
+    <Button android:id="@+id/cal_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/remainLayout"
+        android:layout_centerInParent="true"
+        android:text="Calculate"
+        android:textSize="20sp"/>
+
+</RelativeLayout>
